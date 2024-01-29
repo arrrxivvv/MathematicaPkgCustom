@@ -1,0 +1,415 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17817,        407]
+NotebookOptionsPosition[     14788,        345]
+NotebookOutlinePosition[     15218,        361]
+CellTagsIndexPosition[     15175,        358]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"list1", "=", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.9140148200748863`*^9, 3.9140148233532753`*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"ac821cdf-4ca7-454e-ae7b-95c76093de6c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{3.9140148240743*^9},
+ CellLabel->"Out[20]=",ExpressionUUID->"88ba6ae6-414c-4f41-8b5a-7522dbb96d19"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Delete", "[", 
+  RowBox[{"list1", ",", 
+   RowBox[{"-", "1"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.914014825162013*^9, 3.9140148329026766`*^9}},
+ CellLabel->"In[22]:=",ExpressionUUID->"56f2fd67-e19e-4c44-b0cc-5b9cc3890e6f"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}]], "Output",
+ CellChangeTimes->{{3.9140148278613553`*^9, 3.914014833355051*^9}},
+ CellLabel->"Out[22]=",ExpressionUUID->"049d8b54-3364-4575-90d4-fe558c6390ed"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AppendTo", "[", 
+  RowBox[{"list1", ",", "6"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9140154507502284`*^9, 3.9140154554625*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"1fc77464-2352-4b3c-bde8-24fa7f44707d"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.914015455817541*^9},
+ CellLabel->"Out[27]=",ExpressionUUID->"729a6d8c-754b-439f-8bef-5bbef0b4b6ed"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["list1"], "Input",
+ CellChangeTimes->{{3.9140154568894405`*^9, 3.914015457414317*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"423ab0b6-d07f-4d78-a7c2-af7ece44a6e5"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.914015457772749*^9},
+ CellLabel->"Out[28]=",ExpressionUUID->"158f4849-87c5-4329-95c6-1dc5d1a0958d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["list1"], "Input",
+ CellChangeTimes->{{3.9140148340115986`*^9, 3.9140148344705577`*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"d5609446-1d83-41b7-b8b2-bad08f1d3cd3"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{3.914014834866704*^9},
+ CellLabel->"Out[23]=",ExpressionUUID->"34d0eacb-1dbc-410a-88be-68efc86014b9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["dirThis"], "Input",
+ CellChangeTimes->{{3.9140154664415445`*^9, 3.9140154685182896`*^9}},
+ CellLabel->"In[29]:=",ExpressionUUID->"f3d03860-c616-4195-91fd-1f9ffa9babc4"],
+
+Cell[BoxData["\<\"D:\\\\Ohdraw.niL\\\\OneDrive - UC San \
+Diego\\\\Programming\\\\Mathematica\\\\packages_custom\\\\\"\>"], "Output",
+ CellChangeTimes->{3.9140154689012375`*^9},
+ CellLabel->"Out[29]=",ExpressionUUID->"df36d337-fa0b-4cab-b62a-f2c031bcc9dd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AppendTo", "[", 
+  RowBox[{"$Path", ",", "dirThis"}], "]"}]], "Input",
+ CellChangeTimes->{{3.914015470953373*^9, 3.9140154810291185`*^9}},
+ CellLabel->"In[30]:=",ExpressionUUID->"ea2e8ab0-1333-4386-a68b-98ec24a3b75e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"C:\\\\Users\\\\Ohdraw.niL\\\\AppData\\\\Roaming\\\\Mathematica\
+\\\\DocumentationIndices\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\SystemFiles\\\\Links\"\>", 
+   ",", "\<\"C:\\\\Users\\\\Ohdraw.niL\\\\AppData\\\\Roaming\\\\Mathematica\\\
+\\Kernel\"\>", 
+   ",", "\<\"C:\\\\Users\\\\Ohdraw.niL\\\\AppData\\\\Roaming\\\\Mathematica\\\
+\\Autoload\"\>", 
+   ",", "\<\"C:\\\\Users\\\\Ohdraw.niL\\\\AppData\\\\Roaming\\\\Mathematica\\\
+\\Applications\"\>", 
+   ",", "\<\"C:\\\\ProgramData\\\\Mathematica\\\\Kernel\"\>", 
+   ",", "\<\"C:\\\\ProgramData\\\\Mathematica\\\\Autoload\"\>", 
+   ",", "\<\"C:\\\\ProgramData\\\\Mathematica\\\\Applications\"\>", 
+   ",", "\<\".\"\>", ",", "\<\"C:\\\\Users\\\\Ohdraw.niL\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\AddOns\\\\Packages\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\SystemFiles\\\\Autoload\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\AddOns\\\\Autoload\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\AddOns\\\\Applications\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\AddOns\\\\ExtraPackages\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\SystemFiles\\\\Kernel\\\\Packages\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\Documentation\\\\English\\\\System\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\SystemFiles\\\\Data\\\\ICC\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\Documentation\\\\ChineseSimplified\\\\System\\\\\"\>", 
+   ",", "\<\"D:\\\\Ohdraw.niL\\\\OneDrive - UC San \
+Diego\\\\Programming\\\\Mathematica\\\\packages_custom\\\\\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.9140154816196623`*^9},
+ CellLabel->"Out[30]=",ExpressionUUID->"0d7f6864-ee91-4dab-bed0-9065cf57267b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$Path", "=", 
+  RowBox[{"Delete", "[", 
+   RowBox[{"$Path", ",", 
+    RowBox[{"-", "1"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.9140153284156*^9, 3.914015338043126*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"ff05dc45-ca41-4455-9cae-18306c0eff27"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"C:\\\\Users\\\\Ohdraw.niL\\\\AppData\\\\Roaming\\\\Mathematica\
+\\\\DocumentationIndices\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\SystemFiles\\\\Links\"\>", 
+   ",", "\<\"C:\\\\Users\\\\Ohdraw.niL\\\\AppData\\\\Roaming\\\\Mathematica\\\
+\\Kernel\"\>", 
+   ",", "\<\"C:\\\\Users\\\\Ohdraw.niL\\\\AppData\\\\Roaming\\\\Mathematica\\\
+\\Autoload\"\>", 
+   ",", "\<\"C:\\\\Users\\\\Ohdraw.niL\\\\AppData\\\\Roaming\\\\Mathematica\\\
+\\Applications\"\>", 
+   ",", "\<\"C:\\\\ProgramData\\\\Mathematica\\\\Kernel\"\>", 
+   ",", "\<\"C:\\\\ProgramData\\\\Mathematica\\\\Autoload\"\>", 
+   ",", "\<\"C:\\\\ProgramData\\\\Mathematica\\\\Applications\"\>", 
+   ",", "\<\".\"\>", ",", "\<\"C:\\\\Users\\\\Ohdraw.niL\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\AddOns\\\\Packages\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\SystemFiles\\\\Autoload\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\AddOns\\\\Autoload\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\AddOns\\\\Applications\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\AddOns\\\\ExtraPackages\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\SystemFiles\\\\Kernel\\\\Packages\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\Documentation\\\\English\\\\System\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\SystemFiles\\\\Data\\\\ICC\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\Documentation\\\\ChineseSimplified\\\\System\\\\\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.9140153386432467`*^9},
+ CellLabel->"Out[24]=",ExpressionUUID->"d0071431-7452-4a50-9391-1d9bd657bb12"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Append", "[", 
+  RowBox[{"$Path", ",", "dirThis"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9140139514831667`*^9, 3.91401395253025*^9}, {
+  3.91401421001062*^9, 3.9140142138492374`*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"228542ee-f0a1-47be-bd5c-0c18315195ea"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"C:\\\\Users\\\\Ohdraw.niL\\\\AppData\\\\Roaming\\\\Mathematica\
+\\\\DocumentationIndices\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\SystemFiles\\\\Links\"\>", 
+   ",", "\<\"C:\\\\Users\\\\Ohdraw.niL\\\\AppData\\\\Roaming\\\\Mathematica\\\
+\\Kernel\"\>", 
+   ",", "\<\"C:\\\\Users\\\\Ohdraw.niL\\\\AppData\\\\Roaming\\\\Mathematica\\\
+\\Autoload\"\>", 
+   ",", "\<\"C:\\\\Users\\\\Ohdraw.niL\\\\AppData\\\\Roaming\\\\Mathematica\\\
+\\Applications\"\>", 
+   ",", "\<\"C:\\\\ProgramData\\\\Mathematica\\\\Kernel\"\>", 
+   ",", "\<\"C:\\\\ProgramData\\\\Mathematica\\\\Autoload\"\>", 
+   ",", "\<\"C:\\\\ProgramData\\\\Mathematica\\\\Applications\"\>", 
+   ",", "\<\".\"\>", ",", "\<\"C:\\\\Users\\\\Ohdraw.niL\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\AddOns\\\\Packages\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\SystemFiles\\\\Autoload\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\AddOns\\\\Autoload\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\AddOns\\\\Applications\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\AddOns\\\\ExtraPackages\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\SystemFiles\\\\Kernel\\\\Packages\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\Documentation\\\\English\\\\System\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\SystemFiles\\\\Data\\\\ICC\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\Documentation\\\\ChineseSimplified\\\\System\\\\\"\>", 
+   ",", "\<\"D:\\\\Ohdraw.niL\\\\Google_drive\\\\Programming\\\\Mathematica\\\
+\\packages_custom\"\>", 
+   ",", "\<\"D:\\\\Ohdraw.niL\\\\OneDrive - UC San \
+Diego\\\\Programming\\\\Mathematica\\\\packages_custom\\\\\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.914014217268128*^9},
+ CellLabel->"Out[13]=",ExpressionUUID->"db6d9261-01ef-4eb8-8899-9f53d4d25ee1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dirThis", "=", 
+  RowBox[{"NotebookDirectory", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.914013651997836*^9, 3.9140136622920623`*^9}, {
+  3.9140137138236017`*^9, 3.9140137219529076`*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"5575b37e-e8e3-4a1d-8190-5a9907fe045f"],
+
+Cell[BoxData["\<\"D:\\\\Ohdraw.niL\\\\OneDrive - UC San \
+Diego\\\\Programming\\\\Mathematica\\\\packages_custom\\\\\"\>"], "Output",
+ CellChangeTimes->{
+  3.914013656824051*^9, {3.9140136996374044`*^9, 3.9140137223905215`*^9}},
+ CellLabel->"Out[6]=",ExpressionUUID->"d37d2c12-7881-458e-9aab-99e1dd229ead"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Head", "[", "dirThis", "]"}]], "Input",
+ CellChangeTimes->{{3.914013723977116*^9, 3.9140137265912886`*^9}, {
+  3.9140138028586383`*^9, 3.914013803321722*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"5992e296-ef2f-4a2f-a6dc-63bfb920925a"],
+
+Cell[BoxData["String"], "Output",
+ CellChangeTimes->{3.914013727989716*^9, 3.914013803661276*^9},
+ CellLabel->"Out[12]=",ExpressionUUID->"afb481c7-d9a3-4b0e-bf53-890b6eab86b7"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"$Path", "\[LeftDoubleBracket]", 
+    RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "=", 
+   "\"\<D:\\\\Ohdraw.niL\\\\OneDrive - UC San \
+Diego\\\\Programming\\\\Mathematica\\\\packages_custom\>\""}], ";"}]], "Input",
+ CellChangeTimes->{{3.914013742565456*^9, 3.9140137575687895`*^9}, {
+  3.914013796489662*^9, 3.9140137981064835`*^9}, {3.915296623360349*^9, 
+  3.9152966384987245`*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"15ffcfa6-2c1e-48e6-a631-e20ff5992f7f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$Path"], "Input",
+ CellChangeTimes->{{3.915296536140958*^9, 3.915296538222836*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"da7ce27e-c0f7-4543-85b8-8d908b072427"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"C:\\\\Users\\\\Ohdraw.niL\\\\AppData\\\\Roaming\\\\Mathematica\
+\\\\DocumentationIndices\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\SystemFiles\\\\Links\"\>", 
+   ",", "\<\"C:\\\\Users\\\\Ohdraw.niL\\\\AppData\\\\Roaming\\\\Mathematica\\\
+\\Kernel\"\>", 
+   ",", "\<\"C:\\\\Users\\\\Ohdraw.niL\\\\AppData\\\\Roaming\\\\Mathematica\\\
+\\Autoload\"\>", 
+   ",", "\<\"C:\\\\Users\\\\Ohdraw.niL\\\\AppData\\\\Roaming\\\\Mathematica\\\
+\\Applications\"\>", 
+   ",", "\<\"C:\\\\ProgramData\\\\Mathematica\\\\Kernel\"\>", 
+   ",", "\<\"C:\\\\ProgramData\\\\Mathematica\\\\Autoload\"\>", 
+   ",", "\<\"C:\\\\ProgramData\\\\Mathematica\\\\Applications\"\>", 
+   ",", "\<\".\"\>", ",", "\<\"C:\\\\Users\\\\Ohdraw.niL\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\AddOns\\\\Packages\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\SystemFiles\\\\Autoload\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\AddOns\\\\Autoload\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\AddOns\\\\Applications\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\AddOns\\\\ExtraPackages\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\SystemFiles\\\\Kernel\\\\Packages\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\Documentation\\\\English\\\\System\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\SystemFiles\\\\Data\\\\ICC\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.1\\\
+\\Documentation\\\\ChineseSimplified\\\\System\\\\\"\>", 
+   ",", "\<\"D:\\\\Ohdraw.niL\\\\OneDrive - UC San \
+Diego\\\\Programming\\\\Mathematica\\\\packages_custom\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.915296539009403*^9, 3.9152966471063523`*^9, 
+  3.9152970999016886`*^9, 3.9152974086798615`*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"c12b5e7c-3250-405e-8eb4-a595eae963ae"]
+}, Open  ]]
+},
+WindowSize->{748.1999999999999, 477.},
+WindowMargins->{{Automatic, 131.4000000000001}, {Automatic, 35.4}},
+FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a4e0a49b-8eaa-4907-8f45-c3a7006e6a3a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 279, 5, 28, "Input",ExpressionUUID->"ac821cdf-4ca7-454e-ae7b-95c76093de6c"],
+Cell[862, 29, 222, 4, 32, "Output",ExpressionUUID->"88ba6ae6-414c-4f41-8b5a-7522dbb96d19"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1121, 38, 252, 5, 28, "Input",ExpressionUUID->"56f2fd67-e19e-4c44-b0cc-5b9cc3890e6f"],
+Cell[1376, 45, 240, 4, 32, "Output",ExpressionUUID->"049d8b54-3364-4575-90d4-fe558c6390ed"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1653, 54, 233, 4, 28, "Input",ExpressionUUID->"1fc77464-2352-4b3c-bde8-24fa7f44707d"],
+Cell[1889, 60, 237, 5, 32, "Output",ExpressionUUID->"729a6d8c-754b-439f-8bef-5bbef0b4b6ed"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2163, 70, 178, 2, 28, "Input",ExpressionUUID->"423ab0b6-d07f-4d78-a7c2-af7ece44a6e5"],
+Cell[2344, 74, 237, 5, 32, "Output",ExpressionUUID->"158f4849-87c5-4329-95c6-1dc5d1a0958d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2618, 84, 180, 2, 28, "Input",ExpressionUUID->"d5609446-1d83-41b7-b8b2-bad08f1d3cd3"],
+Cell[2801, 88, 224, 4, 32, "Output",ExpressionUUID->"34d0eacb-1dbc-410a-88be-68efc86014b9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3062, 97, 182, 2, 28, "Input",ExpressionUUID->"f3d03860-c616-4195-91fd-1f9ffa9babc4"],
+Cell[3247, 101, 256, 3, 32, "Output",ExpressionUUID->"df36d337-fa0b-4cab-b62a-f2c031bcc9dd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3540, 109, 241, 4, 28, "Input",ExpressionUUID->"ea2e8ab0-1333-4386-a68b-98ec24a3b75e"],
+Cell[3784, 115, 2112, 38, 337, "Output",ExpressionUUID->"0d7f6864-ee91-4dab-bed0-9065cf57267b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5933, 158, 277, 6, 28, "Input",ExpressionUUID->"ff05dc45-ca41-4455-9cae-18306c0eff27"],
+Cell[6213, 166, 1990, 35, 318, "Output",ExpressionUUID->"d0071431-7452-4a50-9391-1d9bd657bb12"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8240, 206, 288, 5, 28, "Input",ExpressionUUID->"228542ee-f0a1-47be-bd5c-0c18315195ea"],
+Cell[8531, 213, 2214, 40, 356, "Output",ExpressionUUID->"db6d9261-01ef-4eb8-8899-9f53d4d25ee1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10782, 258, 293, 5, 28, "Input",ExpressionUUID->"5575b37e-e8e3-4a1d-8190-5a9907fe045f"],
+Cell[11078, 265, 306, 4, 32, "Output",ExpressionUUID->"d37d2c12-7881-458e-9aab-99e1dd229ead"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11421, 274, 261, 4, 28, "Input",ExpressionUUID->"5992e296-ef2f-4a2f-a6dc-63bfb920925a"],
+Cell[11685, 280, 176, 2, 32, "Output",ExpressionUUID->"afb481c7-d9a3-4b0e-bf53-890b6eab86b7"]
+}, Open  ]],
+Cell[11876, 285, 513, 10, 48, "Input",ExpressionUUID->"15ffcfa6-2c1e-48e6-a631-e20ff5992f7f"],
+Cell[CellGroupData[{
+Cell[12414, 299, 175, 2, 28, "Input",ExpressionUUID->"da7ce27e-c0f7-4543-85b8-8d908b072427"],
+Cell[12592, 303, 2180, 39, 386, "Output",ExpressionUUID->"c12b5e7c-3250-405e-8eb4-a595eae963ae"]
+}, Open  ]]
+}
+]
+*)
+
