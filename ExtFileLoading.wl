@@ -5,7 +5,7 @@
 
 
 (* ::Text:: *)
-(*functions to for external file IO with Julia and Python*)
+(*functions to for external file IO with Julia, Python, and text files*)
 
 
 BeginPackage["ExtFileLoading`"];
@@ -30,6 +30,9 @@ readJuliaVar;
 readJuliaVarSq;
 readJuliaVarDimFixed;
 readJuliaVarSqDim;
+
+
+readTxtLastLine;
 
 
 (* ::Section:: *)
@@ -94,6 +97,34 @@ readJuliaVarSqDim[fName_,var_]:=squeezeDims[readJuliaVar[fName,var]];
 
 (* ::Input::Initialization:: *)
 fileExistJulia[fName_]:=ExternalEvaluate[sessJul,"isfile(\""<>fName<>"\")"];
+
+
+(* ::Subsection:: *)
+(*File stream*)
+
+
+(* ::Input::Initialization:: *)
+readTxtLastLine[fName_]:=
+Module[{inStr=OpenRead[fName]},
+SetStreamPosition[inStr,Infinity];
+If[StreamPosition[inStr]==0,
+Return[""],
+SetStreamPosition[inStr,StreamPosition[inStr]-1];
+If[StreamPosition[inStr]==0,
+Return[""],
+If[Read[inStr,Character]=="\n",
+SetStreamPosition[inStr,StreamPosition[inStr]-2]
+];
+While[StreamPosition[inStr]>0,
+If[Read[inStr,Character]=="\n",
+Break[],
+SetStreamPosition[inStr,StreamPosition[inStr]-2]
+];
+];
+Return[ReadLine[inStr]];
+]
+]
+];
 
 
 End[];

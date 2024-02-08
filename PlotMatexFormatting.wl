@@ -35,6 +35,7 @@ cm;
 
 
 colorLst;
+lineStyleLstDataThick;
 
 
 (* ::Subsection:: *)
@@ -76,6 +77,18 @@ Begin["`Private`"];
 
 
 (* ::Subsection:: *)
+(*Plotting utilities*)
+
+
+(* ::Input::Initialization:: *)
+getMaxPadding[p_List]:=Map[Max,(BorderDimensions@Image[Show[#,LabelStyle->White,Background->White]]&/@p)~Flatten~{{3},{2}},{2}]+1;
+
+
+(* ::Input::Initialization:: *)
+lineStyleLstFunc[colors_,thick_]:=Table[{colors[[iC]],thick},{iC,1,Length[colors]}];
+
+
+(* ::Subsection:: *)
 (*Format parameters*)
 
 
@@ -101,6 +114,10 @@ colorLst={Black}~Join~Table[ColorData[112,ii],{ii,1,100}];
 
 
 (* ::Input::Initialization:: *)
+lineStyleLstDataThick=lineStyleLstFunc[colorLst,dataThick];
+
+
+(* ::Input::Initialization:: *)
 SetOptions[MaTeX,"Preamble"->{"\\usepackage{color,txfonts}"}];
 SetOptions[MaTeX,"FontSize"->10];
 
@@ -115,18 +132,6 @@ SetOptions[$FrontEndSession,PrintingStyleEnvironment->"Working"];
 
 (* ::Input::Initialization:: *)
 capTex=MaTeX[#,Magnification->titleMag]&/@{"\\mathrm{(a)}","\\mathrm{(b)}","\\mathrm{(c)}","\\mathrm{(d)}"};
-
-
-(* ::Subsection:: *)
-(*Plotting utilities*)
-
-
-(* ::Input::Initialization:: *)
-getMaxPadding[p_List]:=Map[Max,(BorderDimensions@Image[Show[#,LabelStyle->White,Background->White]]&/@p)~Flatten~{{3},{2}},{2}]+1;
-
-
-(* ::Input::Initialization:: *)
-lineStyleLstFunc[colors_,thick_]:=Table[{colors[[iC]],thick},{iC,1,Length[colors]}];
 
 
 (* ::Subsection:: *)
