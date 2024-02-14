@@ -12,6 +12,7 @@ BeginPackage["ExtFileLoading`"];
 
 
 Needs["ArrayManip`"];
+Needs["ExternalEvaluatorLoad`"];
 
 
 (* ::Section:: *)
@@ -40,19 +41,6 @@ readTxtLastLine;
 
 
 Begin["`Private`"];
-
-
-(* ::Subsection:: *)
-(*sessions initiation*)
-
-
-sessPy=StartExternalSession["Python"];
-ExternalEvaluate[sessPy, "sys.path.insert(1, '')"];
-ExternalEvaluate[sessPy,"import numpy as np"];
-
-
-sessJul=StartExternalSession["Julia"];
-ExternalEvaluate[sessJul,"using JLD, JLD2"];
 
 
 (* ::Subsection:: *)

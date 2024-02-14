@@ -43,6 +43,8 @@ lineStyleLstDataThick;
 
 
 capTex;
+paramEqMatexLst;
+titleParamLstGen;
 
 
 (* ::Subsection:: *)
@@ -134,13 +136,33 @@ SetOptions[$FrontEndSession,PrintingStyleEnvironment->"Working"];
 capTex=MaTeX[#,Magnification->titleMag]&/@{"\\mathrm{(a)}","\\mathrm{(b)}","\\mathrm{(c)}","\\mathrm{(d)}"};
 
 
+(* ::Input::Initialization:: *)
+paramEqMatexLst[paramStrLst_]:=matexLstFunc[#<>"="&/@paramStrLst,labMag];
+
+
+(* ::Input::Initialization:: *)
+titleParamLstGen[paramLst_,valLst_]:=
+Module[{titleTxt=""},
+Do[titleTxt=titleTxt<>paramLst[[ii]]<>"="<>ToString[valLst[[ii]]];
+If[ii<Length[paramLst],titleTxt=titleTxt<>"\\, ,\\,"];
+,
+{ii,1,Length[paramLst]}];
+titleTxt
+];/;Length[paramLst]==Length[valLst];
+
+
 (* ::Subsection:: *)
 (*MaTeX utilities*)
 
 
 (* ::Input::Initialization:: *)
+(*Options[matexLstFunc]={"prefix"->""};
+matexLstFunc[strLst_,mag_,OptionsPattern[]]:=MaTeX[OptionValue["prefix"]<>#,Magnification->mag]&/@strLst;*)
+
+
+(* ::Input::Initialization:: *)
 Options[matexLstFunc]={"prefix"->""};
-matexLstFunc[strLst_,mag_,OptionsPattern[]]:=MaTeX[OptionValue["prefix"]<>#,Magnification->mag]&/@strLst;
+matexLstFunc[strLst_,mag_,OptionsPattern[]]:=Map[MaTeX[OptionValue["prefix"]<>#,Magnification->mag]&,strLst,{-1}];
 
 
 (* ::Subsection:: *)

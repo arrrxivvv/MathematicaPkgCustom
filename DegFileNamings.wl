@@ -11,7 +11,7 @@
 BeginPackage["DegFileNaming`"];
 
 
-Needs["FileNaming`"];
+Needs["FileNamings`"];
 
 
 (* ::Section:: *)

@@ -1,5 +1,13 @@
 (* ::Package:: *)
 
+(* ::Title:: *)
+(*ArrayManip*)
+
+
+(* ::Text:: *)
+(*Array manipulation utilites*)
+
+
 BeginPackage["ArrayManip`"];
 
 
