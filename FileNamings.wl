@@ -19,6 +19,7 @@ BeginPackage["FileNaming`"];
 (*file name formatting utilities*)
 
 
+Options[fNameFun]={"fMod"->"","isNoSpace"->False};
 fNameFun;
 valDecForm;
 
@@ -51,7 +52,7 @@ valLstToStr[val_] := If[ArrayQ[val], StringReplace[ToString[val], {"{" -> "[", "
 
 
 (* ::Input::Initialization:: *)
-fNameFun[main_, attrLst_, valLst_, mod_, fExt_, isNoSpace_ : False] := Module[{fTmp = main, it},Do[fTmp = fTmp <> "_" <> attrLst[[it]] <> "_" <> valLstToStr[valLst[[it]]],{it,1,Length[attrLst]}];
+fNameFun[main_, attrLst_, valLst_, fExt_,OptionsPattern[]] := Module[{fTmp = main, it,mod=OptionValue["fMod"],isNoSpace=OptionValue["isNoSpace"]},Do[fTmp = fTmp <> "_" <> attrLst[[it]] <> "_" <> valLstToStr[valLst[[it]]],{it,1,Length[attrLst]}];
    If[mod != "", fTmp = fTmp <> "_" <> mod];
    	fTmp = fTmp <> "." <> fExt;
    If[isNoSpace, fTmp = StringReplace[StringDelete[fTmp, {" ", "[", "]"}], "," -> "_"]];
@@ -59,12 +60,11 @@ fNameFun[main_, attrLst_, valLst_, mod_, fExt_, isNoSpace_ : False] := Module[{f
 
 
 (* ::Input::Initialization:: *)
-Options[fNameFun]={fMod_->"",isNoSpace_->False};
-fNameFun[main_, attrLst_, valLst_, fExt_,OptionsPattern[]] := Module[{fTmp = main, it,mod=OptionValue["fMod"],isNoSpace=OptionValue["isNoSpace"]},Do[fTmp = fTmp <> "_" <> attrLst[[it]] <> "_" <> valLstToStr[valLst[[it]]],{it,1,Length[attrLst]}];
+(*fNameFun[main_, attrLst_, valLst_, mod_, fExt_, isNoSpace_ : False] := Module[{fTmp = main, it},Do[fTmp = fTmp <> "_" <> attrLst[[it]] <> "_" <> valLstToStr[valLst[[it]]],{it,1,Length[attrLst]}];
    If[mod != "", fTmp = fTmp <> "_" <> mod];
    	fTmp = fTmp <> "." <> fExt;
    If[isNoSpace, fTmp = StringReplace[StringDelete[fTmp, {" ", "[", "]"}], "," -> "_"]];
-   fTmp];
+   fTmp];*)
 
 
 (* ::Input::Initialization:: *)
