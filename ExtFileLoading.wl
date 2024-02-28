@@ -26,7 +26,9 @@ Needs["ExternalEvaluatorLoad`"];
 readPython::Usage="readPython[f_] reads npy files with file name f";
 
 
+Options[readJulia]={"AbsolutePath"->False};
 readJulia;
+Options[readJuliaVar]=Options[readJulia];
 readJuliaVar;
 readJuliaVarSq;
 readJuliaVarDimFixed;
@@ -68,7 +70,10 @@ readJulia[fName_]:=Normal[ExternalEvaluate[sessJul,
 
 
 (* ::Input::Initialization:: *)
-readJuliaVar[fName_,var_]:=ExternalEvaluate[sessJul,"load("<>Py[Directory[]<>"\\"<>fName]<>",\""<>var<>"\")"];
+readJuliaVar[fName_,var_,OptionsPattern[]]:=
+Module[{fNameFull=fName},
+If[OptionValue["AbsolutePath"],;,fNameFull=Directory[]<>"\\"<>fName];ExternalEvaluate[sessJul,"load("<>fNameFull<>",\""<>var<>"\")"]
+];
 
 
 (* ::Input::Initialization:: *)
