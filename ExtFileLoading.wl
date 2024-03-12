@@ -32,6 +32,8 @@ Options[readJuliaVar]=Options[readJulia];
 readJuliaVar;
 readJuliaVarSq;
 readJuliaVarDimFixed;
+Options[readJuliaVarDimRev]=Options[readJulia];
+readJuliaVarDimRev;
 readJuliaVarSqDim;
 
 
@@ -72,7 +74,9 @@ readJulia[fName_]:=Normal[ExternalEvaluate[sessJul,
 (* ::Input::Initialization:: *)
 readJuliaVar[fName_,var_,OptionsPattern[]]:=
 Module[{fNameFull=fName},
-If[OptionValue["AbsolutePath"],;,fNameFull=Directory[]<>"\\"<>fName];ExternalEvaluate[sessJul,"load("<>fNameFull<>",\""<>var<>"\")"]
+If[OptionValue["AbsolutePath"],
+Null,
+fNameFull=Directory[]<>"\\"<>fName];ExternalEvaluate[sessJul,"load("<>Py[fNameFull]<>",\""<>var<>"\")"]
 ];
 
 
@@ -81,7 +85,11 @@ readJuliaVarSq[fName_,var_]:=squeezeDims[readJuliaVar[fName,var]];
 
 
 (* ::Input::Initialization:: *)
-readJuliaVarDimFixed[fName_,var_]:=squeezeDims[reverseDims[readJuliaVar[fName,var]]];
+readJuliaVarDimFixed[fName_,var_,opt:OptionsPattern[]]:=squeezeDims[reverseDims[readJuliaVar[fName,var,opt]]];
+
+
+(* ::Input::Initialization:: *)
+readJuliaVarDimRev[fName_,var_,opt:OptionsPattern[]]:=reverseDims[readJuliaVar[fName,var,opt]];
 
 
 (* ::Input::Initialization:: *)

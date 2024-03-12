@@ -36,6 +36,7 @@ cm;
 
 colorLst;
 lineStyleLstDataThick;
+markerStyleLstDataSz;
 
 
 (* ::Subsection:: *)
@@ -54,12 +55,17 @@ titleParamLstGen;
 getMaxPadding;
 
 
+plotCombine;
+
+
 (* ::Subsection:: *)
 (*MaTeX utilities*)
 
 
+Options[matexLstFunc]={"prefix"->"","color"->Black};
 matexLstFunc;
 lineStyleLstFunc;
+markerStyleLstFunc;
 
 
 (* ::Subsection:: *)
@@ -90,6 +96,14 @@ getMaxPadding[p_List]:=Map[Max,(BorderDimensions@Image[Show[#,LabelStyle->White,
 lineStyleLstFunc[colors_,thick_]:=Table[{colors[[iC]],thick},{iC,1,Length[colors]}];
 
 
+(* ::Input::Initialization:: *)
+markerStyleLstFunc[colors_,markerSz_]:=Table[{colors[[iC]],markerSz},{iC,Length[colors]}];
+
+
+(* ::Input::Initialization:: *)
+plotCombine=ResourceFunction["CombinePlots"];
+
+
 (* ::Subsection:: *)
 (*Format parameters*)
 
@@ -117,6 +131,7 @@ colorLst={Black}~Join~Table[ColorData[112,ii],{ii,1,100}];
 
 (* ::Input::Initialization:: *)
 lineStyleLstDataThick=lineStyleLstFunc[colorLst,dataThick];
+markerStyleLstDataSz=markerStyleLstFunc[colorLst,markerPtSz];
 
 
 (* ::Input::Initialization:: *)
@@ -161,8 +176,10 @@ matexLstFunc[strLst_,mag_,OptionsPattern[]]:=MaTeX[OptionValue["prefix"]<>#,Magn
 
 
 (* ::Input::Initialization:: *)
-Options[matexLstFunc]={"prefix"->""};
-matexLstFunc[strLst_,mag_,OptionsPattern[]]:=Map[MaTeX[OptionValue["prefix"]<>#,Magnification->mag]&,strLst,{-1}];
+matexLstFunc[strLst_,mag_,OptionsPattern[]]:=Map[Module[{str=OptionValue["prefix"]<>#,colorVal,colorCode},
+If[OptionValue["color"]=!=Black,
+colorVal=List@@OptionValue["color"];
+colorCode=StringForm["`1`,`2`,`3`",##]&@@(ToString/@colorVal);str=StringForm["\\color[rgb]{`1`}{`2`}",colorCode,str]];MaTeX[str,Magnification->mag]]&,strLst,{-1}];
 
 
 (* ::Subsection:: *)
