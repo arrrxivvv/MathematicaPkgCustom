@@ -74,10 +74,23 @@ readJulia[fName_]:=Normal[ExternalEvaluate[sessJul,
 
 (* ::Input::Initialization:: *)
 readJuliaVar[fName_,var_,OptionsPattern[]]:=
-Module[{fNameFull=fName},
+Module[{fNameFull=fName,arrSz,itLst,itBndLst,varOut,idJulLst,xIt},
 If[OptionValue["AbsolutePath"],
 Null,
-fNameFull=Directory[]<>"\\"<>fName];ExternalEvaluate[sessJul,"load("<>Py[fNameFull]<>",\""<>var<>"\")"]
+fNameFull=Directory[]<>"\\"<>fName];ExternalEvaluate[sessJul,"arr=load("<>Py[fNameFull]<>",\""<>var<>"\");nothing"];
+If[ExternalEvaluate[sessJul,
+"typeof(arr)<:Array && eltype(arr)<:Array"]
+,
+arrSz=ExternalEvaluate[sessJul,
+"size(arr)"];
+itLst=Table[xIt[iDim],{iDim,Length[arrSz]}];
+itBndLst={itLst,arrSz}\[Transpose];
+idJulLst=Table[StringRiffle[ToString/@itLst,","],Evaluate[Sequence@@itBndLst]];
+varOut=Table[ExternalEvaluate[sessJul,"arr["<>idJulLst[[Sequence@@itLst]]<>"]"],Evaluate[Sequence@@itBndLst]];
+,
+varOut=ExternalEvaluate[sessJul,"arr"]
+];
+varOut
 ];
 
 
