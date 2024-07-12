@@ -29,7 +29,7 @@ NumberForm[xFloat,{\[Infinity],numDigit}]];
 
 (* ::Input::Initialization:: *)
 floatIntRemoveTrailing[xFloat_]:=
-Map[If[#==Round[#],Round[#],#]&,xFloat,-1];
+Map[If[#==Round[#],Round[#],#]&,xFloat,{-1}];
 
 
 End[]

@@ -39,6 +39,10 @@ lineStyleLstDataThick;
 markerStyleLstDataSz;
 
 
+pltOptLstNoStyle;
+pltOptMatPlot;
+
+
 (* ::Subsection:: *)
 (*Captions*)
 
@@ -113,7 +117,7 @@ texStyle={FontFamily->"Times New Roman",FontSize->8,FontWeight-> "Plain"};
 
 
 (* ::Input::Initialization:: *)
-titleMag=1.1;
+titleMag=1.2;
 labMag=1.0;
 labMagSmall=0.8;
 tickMag=0.8;
@@ -141,6 +145,18 @@ SetOptions[MaTeX,"FontSize"->10];
 
 (* ::Input::Initialization:: *)
 SetOptions[$FrontEndSession,PrintingStyleEnvironment->"Working"];
+
+
+(* ::Input::Initialization:: *)
+pltOptLstNoStyle={BaseStyle->texStyle,Frame->True,PlotRange->All,PlotRangePadding->{None,Automatic}};
+
+
+(* ::Input::Initialization:: *)
+pltOptLst={BaseStyle->texStyle,Frame->True,ImageSize->8cm,PlotStyle->lineStyleLstDataThick,PlotRange->All,PlotRangePadding->{None,Automatic}};
+
+
+(* ::Input::Initialization:: *)
+pltOptMatPlot={BaseStyle->texStyle,Frame->True,PlotRangePadding->None};
 
 
 (* ::Subsection:: *)

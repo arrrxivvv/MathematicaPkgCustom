@@ -35,6 +35,7 @@ readJuliaVarDimFixed;
 Options[readJuliaVarDimRev]=Options[readJulia];
 readJuliaVarDimRev;
 readJuliaVarSqDim;
+readJuliaVarVectOfArrayDimRev;
 
 
 readTxtLastLine;
@@ -94,6 +95,10 @@ readJuliaVarDimRev[fName_,var_,opt:OptionsPattern[]]:=reverseDims[readJuliaVar[f
 
 (* ::Input::Initialization:: *)
 readJuliaVarSqDim[fName_,var_]:=squeezeDims[readJuliaVar[fName,var]];
+
+
+(* ::Input::Initialization:: *)
+readJuliaVarVectOfArr[fName_,var_]:=vectOfArrReverseDims[readJuliaVar[fName,var]];
 
 
 (* ::Input::Initialization:: *)
