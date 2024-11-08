@@ -15,6 +15,10 @@ BeginPackage["ExternalEvaluatorLoad`"];
 (*Public*)
 
 
+(* ::Subsection:: *)
+(*Sessions*)
+
+
 sessPy;
 sessJul;
 
@@ -36,7 +40,7 @@ ExternalEvaluate[sessPy,"import numpy as np"];
 
 
 sessJul=StartExternalSession["Julia"];
-ExternalEvaluate[sessJul,"using JLD, JLD2"];
+ExternalEvaluate[sessJul,"using JLD2"];
 
 
 End[];

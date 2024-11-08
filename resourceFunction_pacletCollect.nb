@@ -1,0 +1,105 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3313,         97]
+NotebookOptionsPosition[      2378,         72]
+NotebookOutlinePosition[      2796,         88]
+CellTagsIndexPosition[      2753,         85]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Set Path", "Section",
+ CellChangeTimes->{{3.936312091826227*^9, 
+  3.9363120935835342`*^9}},ExpressionUUID->"7288b7a9-55b3-d247-abc6-\
+c715d115dca0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9363120952831*^9, 3.936312102871584*^9}},
+ CellLabel->"In[71]:=",ExpressionUUID->"0ba2712a-66e6-1140-b7c5-4dd012649cc0"],
+
+Cell[BoxData["\<\"D:\\\\Ohdraw.niL\\\\OneDrive\\\\Programming\\\\Mathematica\\\
+\\packages_custom\"\>"], "Output",
+ CellChangeTimes->{3.9363121041149426`*^9},
+ CellLabel->"Out[71]=",ExpressionUUID->"3ec22411-4eaa-764f-8016-18c8ee4fd293"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Package Resource Function Paclets", "Section",
+ CellChangeTimes->{{3.9363122474299603`*^9, 
+  3.9363122533293247`*^9}},ExpressionUUID->"49094a9a-5c00-9442-9e38-\
+bd914efdd206"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "ResourceFunction", "[", "\"\<PacletizeResourceFunction\>\"", "]"}], "[", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+    "{", "\[IndentingNewLine]", "\"\<GeneralizedMapThread\>\"", 
+     "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+    "\"\<resourceFuncs.paclet\>\"", ",", "\[IndentingNewLine]", 
+    RowBox[{"\"\<PacletName\>\"", "->", "\"\<ResourceFuncsPaclet\>\""}]}], 
+   "\[IndentingNewLine]", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.9363122562058315`*^9, 3.936312338239628*^9}, {
+  3.9363123685166264`*^9, 3.936312383599966*^9}},
+ CellLabel->"In[72]:=",ExpressionUUID->"0f94cfd0-ed57-2d4f-bbdd-be574a44262f"]
+}, Open  ]],
+
+Cell["Install Saved Resource Function Paclets", "Section",
+ CellChangeTimes->{{3.936312422893667*^9, 
+  3.936312434296543*^9}},ExpressionUUID->"f5684709-ddce-144e-b28b-\
+88837c7675e4"]
+},
+WindowSize->{784.8, 523.8},
+WindowMargins->{{Automatic, 150.60000000000002`}, {Automatic, 0}},
+FrontEndVersion->"14.1 for Microsoft Windows (64-bit) (July 16, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a4e0a49b-8eaa-4907-8f45-c3a7006e6a3a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 155, 3, 66, "Section",ExpressionUUID->"7288b7a9-55b3-d247-abc6-c715d115dca0"],
+Cell[CellGroupData[{
+Cell[760, 29, 247, 4, 28, "Input",ExpressionUUID->"0ba2712a-66e6-1140-b7c5-4dd012649cc0"],
+Cell[1010, 35, 237, 3, 32, "Output",ExpressionUUID->"3ec22411-4eaa-764f-8016-18c8ee4fd293"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1296, 44, 182, 3, 66, "Section",ExpressionUUID->"49094a9a-5c00-9442-9e38-bd914efdd206"],
+Cell[1481, 49, 694, 15, 142, "Input",ExpressionUUID->"0f94cfd0-ed57-2d4f-bbdd-be574a44262f"]
+}, Open  ]],
+Cell[2190, 67, 184, 3, 66, "Section",ExpressionUUID->"f5684709-ddce-144e-b28b-88837c7675e4"]
+}
+]
+*)
+

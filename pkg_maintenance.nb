@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     23766,        548]
-NotebookOptionsPosition[     19546,        465]
-NotebookOutlinePosition[     19964,        481]
-CellTagsIndexPosition[     19921,        478]
+NotebookDataLength[     24097,        556]
+NotebookOptionsPosition[     19783,        472]
+NotebookOutlinePosition[     20201,        488]
+CellTagsIndexPosition[     20158,        485]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -460,7 +460,14 @@ Cell[BoxData[
    RowBox[{"ResourceFunction", "[", "\"\<MaTeXInstall\>\"", "]"}], "[", "]"}],
    ";"}]], "Input",
  CellChangeTimes->{{3.9185943632367554`*^9, 3.918594365147558*^9}},
- CellLabel->"In[17]:=",ExpressionUUID->"8e6a1472-9809-4d51-abda-37de7b6ae9fd"]
+ CellLabel->"In[17]:=",ExpressionUUID->"8e6a1472-9809-4d51-abda-37de7b6ae9fd"],
+
+Cell[BoxData[
+ RowBox[{"ConfigureMaTeX", "[", 
+  RowBox[{"\"\<Ghostscript\>\"", "->"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9376604222701797`*^9, 
+  3.9376604379321117`*^9}},ExpressionUUID->"7ada3f85-58c8-fd42-b16c-\
+73630df8def3"]
 }, Open  ]]
 },
 WindowSize->{784.8, 523.8},
@@ -548,7 +555,8 @@ Cell[16853, 405, 2187, 40, 336, "Output",ExpressionUUID->"7e1296cf-462b-45ef-89c
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[19089, 451, 158, 3, 66, "Section",ExpressionUUID->"235e3533-103e-4d13-b0cd-ee83202aa108"],
-Cell[19250, 456, 280, 6, 54, "Input",ExpressionUUID->"8e6a1472-9809-4d51-abda-37de7b6ae9fd"]
+Cell[19250, 456, 280, 6, 28, "Input",ExpressionUUID->"8e6a1472-9809-4d51-abda-37de7b6ae9fd"],
+Cell[19533, 464, 234, 5, 28, "Input",ExpressionUUID->"7ada3f85-58c8-fd42-b16c-73630df8def3"]
 }, Open  ]]
 }
 ]

@@ -13,6 +13,7 @@ BeginPackage["ExtFileLoading`"];
 
 Needs["ArrayManip`"];
 Needs["ExternalEvaluatorLoad`"];
+Needs["ExternalEvaluatorFuncs`"];
 
 
 (* ::Section:: *)
@@ -27,9 +28,12 @@ readPython::Usage="readPython[f_] reads npy files with file name f";
 
 
 Options[readJulia]={"AbsolutePath"->False};
-readJulia;
-Options[readJuliaVar]=Options[readJulia];
+readJulia;;
 readJuliaVar;
+Options[loadJuliaVarIfArrLst]={"CheckArrLst"->True};
+Options[readJuliaVar]=Options[readJulia]~Join~Options[loadJuliaVarIfArrLst];
+loadJuliaVarIfArrLst;
+loadJuliaVarTypes;
 readJuliaVarSq;
 readJuliaVarDimFixed;
 Options[readJuliaVarDimRev]=Options[readJulia];
@@ -74,15 +78,28 @@ readJulia[fName_]:=Normal[ExternalEvaluate[sessJul,
 
 (* ::Input::Initialization:: *)
 readJuliaVar[fName_,var_,OptionsPattern[]]:=
-Module[{fNameFull=fName,arrSz,itLst,itBndLst,varOut,idJulLst,xIt},
+Module[{fNameFull=fName,arrSz,itLst,itBndLst,varLoadName="arr",varOut,idJulLst,xIt},
+If[OptionValue["AbsolutePath"],
+Null,
+fNameFull=Directory[]<>"\\"<>fName];
+ExternalEvaluate[sessJul,StringTemplate["`a`=load(`f`,\"`v`\");nothing"][<|"a"->varLoadName,"f"->Py[fNameFull],"v"->var|>]
+];
+varOut=loadJuliaVarIfArrLst[varLoadName,"CheckArrLst"->OptionValue["CheckArrLst"]];
+ExternalEvaluate[sessJul,StringTemplate["`a`=nothing; GC.gc()"][<|"a"->varLoadName|>]];
+varOut
+];
+
+
+(* ::Input::Initialization:: *)
+readJuliaVarOld[fName_,var_,OptionsPattern[]]:=
+Module[{fNameFull=fName,arrSz,itLst,itBndLst,varLoadName="arr",varOut,idJulLst,xIt},
 If[OptionValue["AbsolutePath"],
 Null,
 fNameFull=Directory[]<>"\\"<>fName];ExternalEvaluate[sessJul,"arr=load("<>Py[fNameFull]<>",\""<>var<>"\");nothing"];
 If[ExternalEvaluate[sessJul,
 "typeof(arr)<:Array && eltype(arr)<:Array"]
 ,
-arrSz=ExternalEvaluate[sessJul,
-"size(arr)"];
+arrSz=ExternalEvaluate[sessJul,"size(arr)"];
 itLst=Table[xIt[iDim],{iDim,Length[arrSz]}];
 itBndLst={itLst,arrSz}\[Transpose];
 idJulLst=Table[StringRiffle[ToString/@itLst,","],Evaluate[Sequence@@itBndLst]];
@@ -91,6 +108,38 @@ varOut=Table[ExternalEvaluate[sessJul,"arr["<>idJulLst[[Sequence@@itLst]]<>"]"],
 varOut=ExternalEvaluate[sessJul,"arr"]
 ];
 varOut
+];
+
+
+(* ::Input::Initialization:: *)
+loadJuliaVarIfArrLst[varName_,OptionsPattern[]]:=
+Module[{arrSz,xIt,itLst,itBndLst,itJulLst,varNameNxtLst,varOut},
+If[OptionValue["CheckArrLst"]&&ExternalEvaluate[sessJul,StringTemplate["typeof(`a`)<:AbstractArray && eltype(`a`)<:AbstractArray"][<|"a"->varName|>]]
+,
+arrSz=ExternalEvaluate[sessJul,StringTemplate["size(`a`)"][<|"a"->varName|>]];
+itLst=Table[xIt[iDim],{iDim,Length[arrSz]}];
+itBndLst={itLst,arrSz}\[Transpose];
+itJulLst=Table[StringRiffle[ToString/@itLst,","],Evaluate[Sequence@@itBndLst]];
+varNameNxtLst=Table[
+StringTemplate["`a`[`i`]"][<|"a"->varName,"i"->itJulLst[[Sequence@@itLst]]|>]
+,Evaluate[Sequence@@itBndLst]];
+(*varOut=loadJuliaVarIfArrLst/@varNameNxtLst;*)
+varOut=MapThread[loadJuliaVarIfArrLst,{varNameNxtLst},Length[arrSz]];
+,
+(*varOut=ExternalEvaluate[sessJul,varName];*)
+varOut=loadJuliaVarTypes[varName];
+];
+varOut
+];
+
+
+(* ::Input::Initialization:: *)
+loadJuliaVarTypes[varName_]:=
+Module[{var},
+var=If[evalJulia[StringTemplate["typeof(`a`)<:StaticArray"][<|"a"->varName|>]],
+evalJulia[StringTemplate["`a`.data"][<|"a"->varName|>]],
+evalJulia[varName]
+]
 ];
 
 

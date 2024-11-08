@@ -20,6 +20,9 @@ vectOfArrReverseDims
 meshGrid;
 
 
+getArrWindow;
+
+
 Begin["`Private`"];
 
 
@@ -52,6 +55,24 @@ arr1d
 
 (* ::Input::Initialization:: *)
 meshGrid[xLst_,yLst_]:={ConstantArray[xLst,Length[yLst]]\[Transpose],ConstantArray[yLst,Length[xLst]]};
+
+
+(* ::Input::Initialization:: *)
+getArrWindow[arr_,idCenter_,width_]:=
+Module[{idBnd,idWindLst},
+idBnd={#-width,#+width}&/@idCenter;
+If[!And@@(Flatten@MapThread[IntegerQ,{idBnd}]),
+idBnd[[All,1]]=Floor[idBnd[[All,1]]];
+idBnd[[All,2]]=Ceiling[idBnd[[All,2]]];
+];
+idWindLst=Range@@#&/@idBnd;
+idWindLst=MapThread[Mod[#1-1,#2]+1&,{idWindLst,Dimensions[arr]}];
+(*idWindLst=MapThread[Mod[Range[#1-width,#1+width]-1,#2]+1&,{idCenter,Dimensions[arr]}];
+If[!And@@(Flatten@MapThread[IntegerQ,{idWindLst},2]),
+idWindLst\[LeftDoubleBracket]All,1\[RightDoubleBracket]=Floor[idWindLst\[LeftDoubleBracket]All,1\[RightDoubleBracket]];
+idWindLst\[LeftDoubleBracket]All,2\[RightDoubleBracket]=Ceiling[idWindLst\[LeftDoubleBracket]All,2\[RightDoubleBracket]]];*)
+arr[[Sequence@@idWindLst]]
+];
 
 
 End[];
