@@ -40,7 +40,7 @@ ExternalEvaluate[sessPy,"import numpy as np"];
 
 
 sessJul=StartExternalSession["Julia"];
-ExternalEvaluate[sessJul,"using JLD2"];
+ExternalEvaluate[sessJul,"using JLD2, StaticArrays"];
 
 
 End[];

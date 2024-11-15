@@ -1,0 +1,84 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2422,         76]
+NotebookOptionsPosition[      1620,         54]
+NotebookOutlinePosition[      2038,         70]
+CellTagsIndexPosition[      1995,         67]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["External File Loading Test", "Title",
+ CellChangeTimes->{{3.9400861860942173`*^9, 
+  3.940086193378872*^9}},ExpressionUUID->"5a437d9a-88ed-ab44-95ed-\
+321ad2b2aa27"],
+
+Cell[CellGroupData[{
+
+Cell["Loading array of arrays", "Section",
+ CellChangeTimes->{{3.9400861987717*^9, 
+  3.940086204304125*^9}},ExpressionUUID->"bc08b24b-cba7-9f4a-984f-\
+ab600f9c9477"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"<<", "ExtFileLoading`"}], ";"}]], "Input",
+ CellChangeTimes->{{3.9400864671491985`*^9, 3.940086474583172*^9}},
+ CellLabel->"In[72]:=",ExpressionUUID->"bc6143e3-108a-3f42-a218-8d9cb7e65026"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"<<", "ExternalEvaluatorFuncs`"}], ";"}]], "Input",
+ CellChangeTimes->{{3.940086740199299*^9, 3.940086747148691*^9}},
+ CellLabel->"In[73]:=",ExpressionUUID->"fa430af8-e84b-724e-9589-19ee71a109d2"],
+
+Cell[BoxData[
+ RowBox[{"evalJulia", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.9400871254077873`*^9, 
+  3.9400871281649933`*^9}},ExpressionUUID->"6b049ec8-3cd0-c54f-96e3-\
+a40a792d02f8"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{784.8, 523.8},
+WindowMargins->{{Automatic, 150.60000000000002`}, {Automatic, 0}},
+FrontEndVersion->"14.1 for Microsoft Windows (64-bit) (July 16, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a4e0a49b-8eaa-4907-8f45-c3a7006e6a3a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 171, 3, 96, "Title",ExpressionUUID->"5a437d9a-88ed-ab44-95ed-321ad2b2aa27"],
+Cell[CellGroupData[{
+Cell[776, 29, 166, 3, 66, "Section",ExpressionUUID->"bc08b24b-cba7-9f4a-984f-ab600f9c9477"],
+Cell[945, 34, 224, 4, 28, "Input",ExpressionUUID->"bc6143e3-108a-3f42-a218-8d9cb7e65026"],
+Cell[1172, 40, 230, 4, 28, "Input",ExpressionUUID->"fa430af8-e84b-724e-9589-19ee71a109d2"],
+Cell[1405, 46, 187, 4, 28, "Input",ExpressionUUID->"6b049ec8-3cd0-c54f-96e3-a40a792d02f8"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
